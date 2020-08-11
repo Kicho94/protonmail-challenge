@@ -1,10 +1,12 @@
 import styles from './Header.module.css'
 import LanguageList from './LanguageList'
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import {throttle} from 'lodash'
 
 
 const Header = (props) => {
     const [languages, setLanguages] = useState(LanguageList)
+    const [scrollSize, setScrollSize] = useState(false)
     
 
     // function which takes clicked language and puts it on top, puts English second and sorts the array alphabeticaly
@@ -32,7 +34,23 @@ const handleChange = (event) => {
      
       setLanguages(newLanguages); 
     }
+    //captures scroll size and if scroll size is bigger than 50 sets it to true, othervise false
+const handleWindowSize = () =>{
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        console.log("pero")
+        setScrollSize(true)
+      } else {
+        setScrollSize(false)
+      }
+}
+// adding throttle
+const handleDocumentScrollThrottled = throttle(handleWindowSize, 250);
 
+// making sure that handleDocumentScrollThrottled gets called on scroll
+useEffect(() => {
+    window.addEventListener("scroll", handleDocumentScrollThrottled);
+    return () => window.removeEventListener("scroll", handleDocumentScrollThrottled);
+  });
 
     return(
         <nav className={styles.wrapper}>
@@ -76,7 +94,7 @@ const handleChange = (event) => {
                 </div>
                
              </div>
-            <div className={styles.headerBottom}>
+            <div  style={scrollSize ? {padding:"1.5rem 0 ", transition:"all 1 ease"} : null} className={styles.headerBottom}>
                 <div className={styles.headerBottomContent + " container"}>
                     <div>
                         <a href="https://protonmail.com/" rel="noreferrer noopener" target="_blank"><img height="23" src="/images/pm-logo-white.svg"></img></a>
@@ -107,7 +125,6 @@ const handleChange = (event) => {
                    
                 </div>
             </div>  
-                        
         </nav>
         
     )
