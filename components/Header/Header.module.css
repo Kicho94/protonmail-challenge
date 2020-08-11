@@ -21,7 +21,6 @@
     cursor: pointer;
 }
 .headerTopItems a:hover{
-
     color: white;
 }
 .headerTopUl {
@@ -85,7 +84,7 @@
 
 }
 .headerBottom {
-    padding: 3.5rem 0;
+    padding: 3.0rem 0;
     transition: all 0.5s ease;
 }
 .bottomUl {
@@ -100,17 +99,30 @@
     top: 5px;
     cursor: pointer;
 }
-.listItems:hover {
-    color: #9497ce;
+.listItems{
+    border-bottom: solid 2px transparent;
+}
+.listItems:after {
+  display:block;
+  content: '';
+  border-bottom: solid 2px #9497ce;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  padding-bottom: 10px;
+}
+
+.listItems:hover:after { 
+    transform: scaleX(1); 
 }
 
 .buttonLogIn {
-    border: 1px solid #fff;;
+    border: 1.5px solid #fff;;
     border-radius: .4em;
     padding: 13px 20px;
 }
 .buttonLogIn:hover {
-    border: 1px solid #9497ce;
+    border: 1.5px solid #9497ce;
+    transition: all 0.55s ease;
 }
 
 .buttonSignUp {
@@ -121,6 +133,8 @@
 }
 .buttonSignUp:hover {
     background-color: #9497ce;
+    transition: all 0.55s ease;
+    color: white;
 }
 
 .headerBottomContent {

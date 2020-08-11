@@ -37,7 +37,6 @@ const handleChange = (event) => {
     //captures scroll size and if scroll size is bigger than 50 sets it to true, othervise false
 const handleWindowSize = () =>{
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        console.log("pero")
         setScrollSize(true)
       } else {
         setScrollSize(false)
@@ -83,7 +82,7 @@ useEffect(() => {
                             {languages.map((e,index)=>{
                               
                                 if(index === 0) {
-                                    return   <li id={e} onClick={handleChange} lassName={styles.visible}><i class="fa fa-globe"></i> {e}</li>
+                                    return   <li id={e} onClick={handleChange} className={styles.visible}><i class="fa fa-globe"></i> {e}</li>
                                 } else {
                                 return <li id={e} onClick={handleChange} className={styles.hidden}><i class="fa fa-globe" style={{visibility:"hidden"}}></i> {e}</li>
                                 }
@@ -96,11 +95,11 @@ useEffect(() => {
              </div>
             <div  style={scrollSize ? {padding:"1.5rem 0 ", transition:"all 1 ease"} : null} className={styles.headerBottom}>
                 <div className={styles.headerBottomContent + " container"}>
-                    <div>
+                    <div >
                         <a href="https://protonmail.com/" rel="noreferrer noopener" target="_blank"><img height="23" src="/images/pm-logo-white.svg"></img></a>
                     </div>
 
-                    <div>
+                    <div style={{paddingTop:"0.65em"}}>
                         <ul className={styles.bottomUl}>
                             <li className={styles.listItems}><a rel="noreferrer noopener" target="_blank" href="https://protonmail.com/about">About</a></li>
 
