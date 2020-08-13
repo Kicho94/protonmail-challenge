@@ -1,4 +1,5 @@
 
+// Component that makes a grey anchor link that looks like button, gets props.name and prop destination
 const Badge = (props) => {
     return(
         <React.Fragment>
@@ -8,7 +9,8 @@ const Badge = (props) => {
         <style jsx> {`
            
             a{
-                text-decoration:none
+                text-decoration:none;
+                transition: all 550ms cubic-bezier(.45,1,.32,1);
 
             }
             a span {

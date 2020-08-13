@@ -1,0 +1,35 @@
+.wrapperRight{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: auto 100%;
+
+}
+.wrapperLeft{
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: auto 100%;
+}
+.background {
+    width: 50%;
+    
+}
+
+.rightText {
+    background-color: #fff;
+    padding: 40px 55px;
+    width: 50%;
+
+}
+.rightText h4{
+    font-size:18px;
+    font-weight: 500;
+}
+.rightText p {
+    margin: 1.8em 0 0 0;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.7rem;
+    line-height: 1.7;
+}
