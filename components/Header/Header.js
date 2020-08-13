@@ -52,7 +52,8 @@ useEffect(() => {
   });
 
     return(
-        <nav className={styles.wrapper}>
+        <React.Fragment>
+            <nav className={styles.wrapper}>
             <div className={styles.headerTop }> 
                 <div className={styles.headerTopItems +" container" }>
                     <a href="https://facebook.com/ProtonMail" rel="noreferrer noopener" target="_blank">
@@ -82,9 +83,9 @@ useEffect(() => {
                             {languages.map((e,index)=>{
                               
                                 if(index === 0) {
-                                    return   <li id={e} onClick={handleChange} className={styles.visible}><i class="fa fa-globe"></i> {e}</li>
+                                    return   <li key={index} id={e} onClick={handleChange} className={styles.visible}><i className="fa fa-globe"></i> {e}</li>
                                 } else {
-                                return <li id={e} onClick={handleChange} className={styles.hidden}><i class="fa fa-globe" style={{visibility:"hidden"}}></i> {e}</li>
+                                return <li key={index} id={e} onClick={handleChange} className={styles.hidden}><i className="fa fa-globe" style={{visibility:"hidden"}}></i> {e}</li>
                                 }
                             })}
                          </ul> 
@@ -125,7 +126,8 @@ useEffect(() => {
                 </div>
             </div>  
         </nav>
-        
+            <div style={{height:"160px"}}></div>
+        </React.Fragment>
     )
 }
 

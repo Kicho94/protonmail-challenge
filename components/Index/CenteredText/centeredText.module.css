@@ -1,0 +1,15 @@
+.wrapper {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    text-align: center;
+   
+    
+}
+.wrapper h1 {
+    margin: 1em 0;
+}
+.wrapper div {
+    font-size: 21px;
+    line-height: 1.4;
+
+}
