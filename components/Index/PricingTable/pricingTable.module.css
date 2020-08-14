@@ -1,0 +1,71 @@
+.wrapper {
+    background: #e5e5e5;
+    padding: 4rem 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.selectBox{
+    text-align: right;
+    margin-bottom: 15px;
+}
+.selectBox select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
+.selectBox select:first-child {
+    margin-right: 5px;
+}
+.tableWrapper {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    position: relative;
+
+}
+.tableWrapper .campaign {
+    border-right:  1px solid #ccc;
+    border-left:  1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    padding: 3rem;
+    position: relative;
+
+}
+.tableWrapper > div:first-child {
+    border-left:  1px solid #ccc;
+    border-right: hidden;
+}
+.tableWrapper > div:last-child {
+    border-right:  1px solid #ccc;
+    border-left: hidden;
+}
+.descriptionList {
+    margin-bottom: 1em;
+
+}
+.descriptionList ul{
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    }
+.descriptionList li {
+    padding-left: 1.3em;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+ .descriptionList li:before {
+    content: "\f061"; /* FontAwesome Unicode */
+    font-family: FontAwesome;
+    display: inline-block;
+    margin-left: -1.3em; /* same as padding-left set on li */
+    width: 1.3em; /* same as padding-left set on li */
+  }
+.campaign {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
