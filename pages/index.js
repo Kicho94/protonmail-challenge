@@ -5,14 +5,13 @@ import Contribute from '../components/Contribute';
 import PrimaryAnchor from '../components/PrimaryAnchor/PrimaryAnchor';
 import Contact from '../components/Contact'
 import PricingTable from '../components/Index/PricingTable/PricingTable';
+import Footer from '../components/Footer/Footer'
 
 import { ProtonMailFeatures } from '../assets/ProtonMailPricing';
 
 const comSupportedContent = "ProtonMail is community software, funded by the community, and open source. We do not show ads or make money by abusing your privacy. Instead, we depend on your support to keep the service running. Revenue from paid accounts is used to further develop ProtonMail and support free users such as democracy activists and dissidents who need privacy but can't necessarily afford it."
 
 export default function Home(props) {
-console.log(props.requestPlans)
-  // Filtering the needed plans only from the request
 const pricingPlans = props.requestPlans.filter((e)=>{
   if(e.Name === "plus" || e.Name === "professional" || e.Name === "visionary"){
     return e
@@ -81,6 +80,7 @@ const badges = ProtonMailFeatures.map((item)=>{
           </div>
         </div>
         <Contact/>
+        <Footer/>
      
     </React.Fragment>
 

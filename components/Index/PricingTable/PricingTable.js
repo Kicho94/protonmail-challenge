@@ -31,8 +31,6 @@ const PricingTable = (props) => {
 
     const tableData = props.data.map(e=>{
        
-        
-        
         return (
             <div id={e.Name} className={styles.campaign}>
                     <div>
@@ -71,7 +69,6 @@ const PricingTable = (props) => {
     })
         return(
     <React.Fragment>
-        <pre>{JSON.stringify(props, null, 4)}</pre>
         <div className={styles.wrapper}>
             <div className="container">
                 <h2>Plans and prices</h2>
