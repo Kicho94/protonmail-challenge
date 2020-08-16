@@ -3,14 +3,15 @@
 const Badge = (props) => {
     return(
         <React.Fragment>
-        <a href={props.destination}>
-            <span>{props.name}</span>
+        <a onClick={props.func}>
+            <span >{props.name}</span>
         </a>
         <style jsx> {`
            
             a{
                 text-decoration:none;
                 transition: all 550ms cubic-bezier(.45,1,.32,1);
+                cursor: pointer;
 
             }
             a span {

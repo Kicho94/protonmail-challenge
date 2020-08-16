@@ -4,7 +4,7 @@ import PrimaryAnchor from '../../PrimaryAnchor/PrimaryAnchor'
 const TextPicture = (props) => {
     if(props.textRight){
         return(
-            <div id={props.title} style={{backgroundImage:props.image}} className={styles.wrapperRight}>
+            <div ref={props.forwardedRef} id={props.title} style={{backgroundImage:props.image}} className={styles.wrapperRight}>
                 <div style={{display:"flex"}} className="container">
                     
                     <div className={styles.background}></div>
@@ -22,7 +22,7 @@ const TextPicture = (props) => {
     }
     else {
         return (
-            <div id={props.title} style={{backgroundImage:props.image}} className={styles.wrapperLeft}>
+            <div ref={props.forwardedRef} id={props.title} style={{backgroundImage:props.image}} className={styles.wrapperLeft}>
             <div style={{display:"flex"}} className="container">
                 
                 <div className={styles.rightText}>

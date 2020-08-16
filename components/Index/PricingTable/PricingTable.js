@@ -5,7 +5,6 @@ const PricingTable = (props) => {
     const [currency, setCurrency] = useState("€");
     const [campaign, setCampaign] = useState("Monthly")
 
-    console.log(props.data)
 
     const handleCurrency = (e) => {
         setCurrency(e.target.value)

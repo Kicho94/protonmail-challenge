@@ -8,10 +8,18 @@ import PricingTable from '../components/Index/PricingTable/PricingTable';
 import Footer from '../components/Footer/Footer'
 
 import { ProtonMailFeatures } from '../assets/ProtonMailPricing';
+import { useEffect, useRef } from 'react';
 
 const comSupportedContent = "ProtonMail is community software, funded by the community, and open source. We do not show ads or make money by abusing your privacy. Instead, we depend on your support to keep the service running. Revenue from paid accounts is used to further develop ProtonMail and support free users such as democracy activists and dissidents who need privacy but can't necessarily afford it."
 
 export default function Home(props) {
+
+  let refs = {}
+
+  useEffect(()=>{
+    console.log(refs)
+  },)
+  
 const pricingPlans = props.requestPlans.filter((e)=>{
   if(e.Name === "plus" || e.Name === "professional" || e.Name === "visionary"){
     return e
@@ -21,12 +29,15 @@ const pricingPlans = props.requestPlans.filter((e)=>{
 })
   //function that renders a TextPictures component for each of the ProtonMail features 
 const features = ProtonMailFeatures.map((item,index) => {
+  
+  refs[item.title] = useRef(null)
   if(index % 2 === 0){
     return (
     <TextPicture
     title={item.title}
     content={item.content}
     image={item.image}
+    forwardedRef={refs[item.title]}
     />
     )
     }
@@ -37,16 +48,22 @@ const features = ProtonMailFeatures.map((item,index) => {
         content={item.content}
         image={item.image}
         textRight={true}
+        forwardedRef={refs[item.title]}
         />
       )
   }
 }) 
 // function that renders Badge component for each of the ProtonMail features
 const badges = ProtonMailFeatures.map((item)=>{
+  let scrollToMyRef = () => window.scrollTo({
+    top:(refs[item.title].current.offsetTop - 105),
+    behavior: 'smooth'
+  }) 
   return (
     <Badge 
-    name={item.title}
-    destination={`#${item.title}`}
+    name = {item.title}
+    destination = {`#${item.title}`}
+    func={scrollToMyRef}
     />
   )
 })
